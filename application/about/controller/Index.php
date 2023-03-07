@@ -49,5 +49,18 @@ class Index extends Controller
         $this->assign('title', $title)->assign('user', $user);
         return $this->fetch('getAllUser');
     }
+
+    public function selectTest() {
+        $user = aboutModel::where('height', '>', 200)->select();
+        return $user;
+    }
     
+    public function delete($id) {
+        $user = aboutModel::get($id);
+        if ($user->delete()) {
+         return '刪除成功'.$user->id;
+        } else {
+            return $user->getError();
+        }
+    }
 }

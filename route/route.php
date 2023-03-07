@@ -25,7 +25,17 @@ Route::post('/about/create', 'about/index/create');
 
 Route::get('/about/list', 'about/index/all');
 
-Route::get('/about/:id', 'about/index/select');
+// Route::get('/about/select', 'about/index/selectTest');
+
+Route::get('/about/select/:id', 'about/index/select');
+
+Route::get('/about/delete/:id', 'about/index/delete');
+
+
+Route::get('/dbexample/add', 'dbexample/index/add');
+Route::get('/dbexample/update', 'dbexample/index/update');
+Route::get('/dbexample/select', 'dbexample/index/select');
+Route::get('/dbexample/delete', 'dbexample/index/delete');
 
 return [
 
