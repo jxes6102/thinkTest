@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>這是打招呼介面</title>
+</head>
+<body>
+  <h1>Say Hi!</h1>
+  <h5>這透過 Controller 傳送的參數:是一個 Hello,{$thing['direction']}{$thing['name']} ！</h5>
+  <h1>for moment</h1>
+  <table>
+    <?php
+        foreach ($thing as $value) {
+            echo '<tr><td>';
+            echo  $value;
+            echo '</td></tr>';
+        }
+    ?>
+  </table>
+</body>
+</html>

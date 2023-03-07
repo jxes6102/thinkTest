@@ -15,6 +15,18 @@ Route::get('think', function () {
 
 Route::get('hello/:name', 'index/hello');
 
+Route::get('/about/gg1', 'about/index/index');
+
+Route::get('/about/gg2', 'about/index/sayhi');
+
+Route::get('/about/user', 'about/index/user');
+
+Route::post('/about/create', 'about/index/create');
+
+Route::get('/about/list', 'about/index/all');
+
+Route::get('/about/:id', 'about/index/select');
+
 return [
 
 ];
