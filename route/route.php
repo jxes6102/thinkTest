@@ -31,11 +31,16 @@ Route::get('/about/select/:id', 'about/index/select');
 
 Route::get('/about/delete/:id', 'about/index/delete');
 
+Route::get('/about/helloeq/:name', 'about/index/helloeq');
+
 
 Route::get('/dbexample/add', 'dbexample/index/add');
 Route::get('/dbexample/update', 'dbexample/index/update');
 Route::get('/dbexample/select', 'dbexample/index/select');
 Route::get('/dbexample/delete', 'dbexample/index/delete');
+
+Route::get('/user/signin', 'user/index/signin');
+Route::get('/user/signup', 'user/index/signup');
 
 return [
 

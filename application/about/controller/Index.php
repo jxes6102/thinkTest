@@ -44,7 +44,8 @@ class Index extends Controller
     }
 
     public function all() {
-        $user = aboutModel::all();
+        // $user = aboutModel::all();
+        $user = aboutModel::paginate(5);
         $title = '全部使用者資料';
         $this->assign('title', $title)->assign('user', $user);
         return $this->fetch('getAllUser');
@@ -62,5 +63,10 @@ class Index extends Controller
         } else {
             return $user->getError();
         }
+    }
+
+    public function helloeq($name){
+        $title = 'helloeq';
+        return $this->assign('name',$name)->assign('title',$title)->fetch('hello');
     }
 }

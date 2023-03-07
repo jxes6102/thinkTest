@@ -1,0 +1,19 @@
+{layout name="layout" /}
+{eq name="name" value="Ray"}
+  <span>管理員你好</span>
+{else/}
+  <span>你是誰?我不認識你</span>
+{/eq}
+
+{if ($name == 'Ray')}
+  <span>管理員你好</span>
+{else /}
+  <span>你是誰?我不認識你</span>
+{/if}
+
+{switch $name}
+  {case Ray}
+    <span>管理員你好</span>
+  {/case}
+  {default/}<span>你是誰?我不認識你</span>
+{/switch}

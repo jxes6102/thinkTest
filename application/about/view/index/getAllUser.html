@@ -1,9 +1,28 @@
 {layout name="layout" /}
-  <h1>{$title}</h1>
-  {volist name="user" id="list"}
-  <ul>
-    <li>姓名:{$list.name}</li>
-    <li>體重:{$list.weight}</li>
-    <li>身高:{$list.height}</li>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item active" aria-current="page">Home</li>
+  </ol>
+</nav>
+
+<!-- {volist name="user" id="list" offset="0" length="10" key="index"}
+<ul class="list-group px-5 py-2">
+  <li class="list-group-item">KEY:{$index}</li>
+  <li class="list-group-item active">姓名:{$list.name}</li>
+  <li class="list-group-item">體重:{$list.weight}</li>
+  <li class="list-group-item">身高:{$list.height}</li>
+</ul>
+{/volist} -->
+
+<div class="container">
+  <h1>{$title} - foreach 標籤</h1>
+  {foreach $user as $vo}
+  <ul class="list-group px-5 py-2">
+    <li class="list-group-item">KEY:{$vo.id}</li>
+    <li class="list-group-item active">姓名:{$vo.name}</li>
+    <li class="list-group-item">體重:{$vo.weight}</li>
+    <li class="list-group-item">身高:{$vo.height}</li>
   </ul>
-  {/volist}
+  {/foreach}
+  {$user|raw}
+</div>

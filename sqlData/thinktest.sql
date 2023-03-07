@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2023-03-07 07:16:25
+-- 產生時間： 2023-03-07 09:40:03
 -- 伺服器版本： 10.4.20-MariaDB
 -- PHP 版本： 7.3.29
 
@@ -20,6 +20,19 @@ SET time_zone = "+00:00";
 --
 -- 資料庫: `thinktest`
 --
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `think_account`
+--
+
+CREATE TABLE `think_account` (
+  `id` int(10) NOT NULL,
+  `email` varchar(15) NOT NULL DEFAULT '',
+  `password` varchar(10) NOT NULL DEFAULT '0',
+  `gender` int(2) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -97,6 +110,12 @@ INSERT INTO `think_user` (`id`, `name`, `weight`, `height`) VALUES
 --
 
 --
+-- 資料表索引 `think_account`
+--
+ALTER TABLE `think_account`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- 資料表索引 `think_db`
 --
 ALTER TABLE `think_db`
@@ -111,6 +130,12 @@ ALTER TABLE `think_user`
 --
 -- 在傾印的資料表使用自動遞增(AUTO_INCREMENT)
 --
+
+--
+-- 使用資料表自動遞增(AUTO_INCREMENT) `think_account`
+--
+ALTER TABLE `think_account`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `think_db`
